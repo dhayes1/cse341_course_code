@@ -28,11 +28,11 @@ const getSingle = async (req, res, next) => {
 
 const insertNew = async (req, res) => {
   const newContact = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+    firstName: "Darkwing",
+    lastName: "Duck",
+    email: "darkwing.duck@hero.com",
+    favoriteColor: "Purple",
+    birthday: "01/05/83"
   };
   const response = await mongodb.getDb().db().collection('contacts').insertOne(newContact);
   if (response.acknowledged) {
