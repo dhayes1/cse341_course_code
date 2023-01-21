@@ -22,4 +22,25 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-module.exports = { getAll, getSingle };
+const newContact = async (req, res, next) => {
+  mongodb.getDb().db().collection('contacts').insertOne(
+    {
+      firstName: "Darkwing",
+      lastName: "Duck",
+      email: "darkwing.duck@hero.com",
+      favoriteColor: "Blue",
+      birthday: "01/05/1986"
+    }
+  );
+  const result = await mongodb
+    .getDb()
+    .db()
+    .collection('contacts')
+    .find({firstName: "Darkwing"});
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists[0]._id);
+  });
+};
+
+module.exports = { getAll, getSingle, newContact };
