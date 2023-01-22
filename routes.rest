@@ -1,13 +1,36 @@
 // LOCALHOST
-###
+### Test
 GET http://localhost:8080/test
-###
+
+### Get all contacts in DB
 GET http://localhost:8080/contacts
-###
+
+### Get speific contact by id
 GET http://localhost:8080/contacts/63c39b638bff7b3a15da6bd3
-###
-GET http://localhost:8080/contacts/63c39b788bff7b3a15daae5f
-###
-GET http://localhost:8080/contacts/63c39b8c8bff7b3a15dae266
-###
-PUT http://localhost:8080/contacts/insertNew
+
+### Create new contact
+POST http://localhost:8080/contacts/ HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Launchpad",
+    "lastName": "McQuack",
+    "email": "ace.pilot@flight.net",
+    "favoriteColor": "Yellow",
+    "birthday": "08/03/82"
+}
+
+### Update specific contact by id
+PUT http://localhost:8080/contacts/63cc6cf8de286887fd64024f HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Launchpad",
+    "lastName": "McQuack",
+    "email": "ace.pilot@crash.net",
+    "favoriteColor": "Orange",
+    "birthday": "03/03/82"
+}
+
+### Delete specific contact by id
+DELETE http://localhost:8080/contacts/63cc710fde286887fd640250

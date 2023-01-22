@@ -26,15 +26,19 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-const insertNew = async (req, res) => {
-  const newContact = {
-    firstName: "Darkwing",
-    lastName: "Duck",
-    email: "darkwing.duck@hero.com",
-    favoriteColor: "Purple",
-    birthday: "01/05/83"
+const createContact = async (req, res) => {
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
   };
-  const response = await mongodb.getDb().db().collection('contacts').insertOne(newContact);
+  const response = await mongodb
+    .getDb()
+    .db()
+    .collection('contacts')
+    .insertOne(contact);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
@@ -42,4 +46,39 @@ const insertNew = async (req, res) => {
   }
 };
 
-module.exports = { getAll, getSingle, insertNew };
+const updateContact = async (req, res, next) => {
+  const contactId = new ObjectId(req.params.id);
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+  const response = await mongodb
+    .getDb()
+    .db()
+    .collection('contacts')
+    .updateOne({ _id: contactId }, { $set: contact });
+  if (response.modifiedCount > 0) {
+    res.status(204).json(response);
+  } else {
+    res.status(500).json(response.error || 'ERROR: Cannot update contact.');
+  }
+};
+
+const deleteContact = async (req, res, next) => {
+  const contactId = new ObjectId(req.params.id);
+  const response = await mongodb
+    .getDb()
+    .db()
+    .collection('contacts')
+    .deleteOne({ _id: contactId });
+  if (response.deletedCount > 0) {
+    res.status(200).json(response);
+  } else {
+    res.status(500).json(response.error || `ERROR: Cannot delete contact. ${contactId}`);
+  }
+};
+
+module.exports = { getAll, getSingle, createContact, updateContact, deleteContact };
