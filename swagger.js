@@ -5,8 +5,8 @@ const doc = {
     title: 'CSE 341 Contacts API',
     description: 'API for interacting with the CSE 341 contacts database.',
   },
-  host: 'https://dhayes-cse341-course-code-ogxh.onrender.com',
-  schemes: ['http'],
+  host: 'dhayes-cse341-course-code-ogxh.onrender.com',
+  schemes: ['http', 'https'],
 };
 
 const outputFile = './swagger-output.json';

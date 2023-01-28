@@ -5,10 +5,11 @@
     "description": "API for interacting with the CSE 341 contacts database.",
     "version": "1.0.0"
   },
-  "host": "https://dhayes-cse341-course-code-ogxh.onrender.com",
+  "host": "dhayes-cse341-course-code-ogxh.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/contacts/": {
