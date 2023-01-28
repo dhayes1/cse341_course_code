@@ -1,7 +1,4 @@
 // LOCALHOST
-### Test
-GET http://localhost:8080/test
-
 ### Get all contacts in DB
 GET http://localhost:8080/contacts
 
@@ -37,9 +34,6 @@ DELETE http://localhost:8080/contacts/63cc710fde286887fd640250
 
 
 // Production
-### Test
-GET https://cse341-course-code.onrender.com/test
-
 ### Get all contacts in DB
 GET https://cse341-course-code.onrender.com/contacts
 

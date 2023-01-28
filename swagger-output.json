@@ -11,17 +11,6 @@
     "http"
   ],
   "paths": {
-    "/test": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/contacts/": {
       "get": {
         "tags": [
