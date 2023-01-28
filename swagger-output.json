@@ -5,7 +5,7 @@
     "description": "API for interacting with the CSE 341 contacts database.",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://dhayes-cse341-course-code-ogxh.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
