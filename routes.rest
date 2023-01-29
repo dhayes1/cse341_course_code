@@ -35,13 +35,13 @@ DELETE http://localhost:8080/contacts/63cc710fde286887fd640250
 
 // Production
 ### Get all contacts in DB
-GET https://https://dhayes-cse341-course-code-ogxh.onrender.com/contacts
+GET https://dhayes-cse341-course-code-ogxh.onrender.com/contacts
 
 ### Get speific contact by id
-GET https://https://dhayes-cse341-course-code-ogxh.onrender.com/contacts/63c39b638bff7b3a15da6bd3
+GET https://dhayes-cse341-course-code-ogxh.onrender.com/contacts/63c39b638bff7b3a15da6bd3
 
 ### Create new contact
-POST https://https://dhayes-cse341-course-code-ogxh.onrender.com/contacts/ HTTP/1.1
+POST https://dhayes-cse341-course-code-ogxh.onrender.com/contacts/ HTTP/1.1
 content-type: application/json
 
 {
@@ -53,7 +53,7 @@ content-type: application/json
 }
 
 ### Update specific contact by id
-PUT https://https://dhayes-cse341-course-code-ogxh.onrender.com/contacts/63cc6cf8de286887fd64024f HTTP/1.1
+PUT https://dhayes-cse341-course-code-ogxh.onrender.com/contacts/63cc6cf8de286887fd64024f HTTP/1.1
 content-type: application/json
 
 {
@@ -65,4 +65,4 @@ content-type: application/json
 }
 
 ### Delete specific contact by id
-DELETE https://https://dhayes-cse341-course-code-ogxh.onrender.com/contacts/63ccd1647487f31d6bbed1d6
+DELETE https://dhayes-cse341-course-code-ogxh.onrender.com/contacts/63ccd1647487f31d6bbed1d6
